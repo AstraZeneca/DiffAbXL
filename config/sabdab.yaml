@@ -1,0 +1,146 @@
+---
+# General settings
+seed: 2025                 # Seed for reproducibility
+model_name: DiffAbXL       # Name of the model
+debug: False               # Debug mode: If True, a subset of data is used for quick testing
+wandb: False               # Use Weights and Biases for logging
+load_val_test: True        # Load validation and test sets during training; False for data pre-processing
+reset: False               # To reset the database
+
+# Data transformation settings
+is_transform: True         # Apply transformations to the data
+antigen: "ag"              # Antigen name (placeholder used here)
+scheme: chothia            # Sequence alignment scheme (e.g., chothia)
+
+# Paths for data storage and retrieval
+paths:
+    data: ./data/
+    results: ./results/
+
+# Task configuration
+task: codesign_single      # Task options: codesign_single, codesign_fv, fixbb, strpred
+
+# CDR length perturbation settings
+perturb_length: True       # Allow perturbation of CDR lengths during training
+min_length: 5              # Minimum CDR length
+shorten_by: 2              # Maximum number of residues to shorten CDRs by
+extend_by: 2               # Maximum number of residues to extend CDRs by
+
+# Masking settings for CDR regions
+cdrs_to_mask: [3]          # CDRs to mask during training; used in sampling
+
+# Data transformations applied during processing
+# Available options: mask_cdrs, merge_chains, patch_around_anchor, mask_ab (for FV codesigning)
+transform:
+  - mask_cdrs
+  - merge_chains
+  - patch_around_anchor
+
+# Training settings
+scheduler: True            # Use a learning rate scheduler
+scheduler_type: plateau     # Type of scheduler (e.g., plateau)
+validate: True              # Run validation during training
+epochs: 10                 # Total number of training epochs
+nth_epoch: 1               # Validate every nth epoch
+validation_size: 20        # Size of validation set
+batch_size: 2              # Training batch size
+model_save_freq: 1         # Frequency to save the model (every n epochs)
+learning_rate: 0.0001      # Initial learning rate
+min_lr: 1.0e-5             # Minimum learning rate allowed by scheduler
+patience: 1                # Scheduler patience (epochs without improvement)
+max_grad_norm: 100         # Maximum gradient norm for clipping
+
+# Loss weights for different tasks
+loss_weights:
+  rot: 1.0                 # Weight for rotational loss
+  pos: 1.0                 # Weight for positional loss
+  seq: 1.0                 # Weight for sequence loss
+  aff: 1.0                 # Weight for affinity loss
+
+# Noising scheme for sequence generation
+noising_scheme: uniform    # Scheme for adding noise to sequence during training
+
+# Sequence length definitions for Fv region
+heavy_max_seq: 150         # Maximum sequence length for the heavy chain
+light_max_seq: 150         # Maximum sequence length for the light chain
+cdr3_max_seq: 30           # Maximum length for CDR3
+max_num_heavyatoms: 15     # Maximum number of heavy atoms in a residue
+max_aa_types: 24           # Total number of amino acid types (including extras)
+num_aa_types: 20           # Standard amino acids
+max_chain_types: 10        # Maximum number of chain types
+
+# Atom inclusion settings
+num_atoms: 15              # Number of atoms to include (max is 15, representing the backbone and side chains)
+
+# Diffusion model parameters
+ns_bias: 0.01              # Bias
+residue_dim: 128           # Dimension of residue embedding
+pair_dim: 64               # Dimension for pair embeddings
+num_steps: 100             # Number of diffusion steps
+num_layers: 6              # Number of layers in the diffusion model
+position_mean:             # Mean position for atom placement
+  - 0.0
+  - 0.0
+  - 0.0
+position_scale:            # Scale for atom positions
+  - 10.0
+
+# Training options
+train_structure: True      # Train on structure
+train_sequence: True       # Train on sequence
+
+# Antibody-antigen interaction parameters
+contact_distance: 6        # Maximum distance (in Å) for defining contacts between antigen and antibody
+
+# Fragment type IDs for different chains
+fragment_type:
+  heavy: 1                 # ID for heavy chain
+  light_kappa: 2           # ID for light chain (kappa)
+  light_lambda: 3          # ID for light chain (lambda)
+  antigen: 4               # ID for antigen
+  unknown_light: 5         # ID for unknown light chains
+
+# SabDab database filtering settings
+resolution_threshold: 4.0  # Maximum allowed resolution (in Å) for structures
+ag_types:                  # Types of antigens to include
+  - null
+  - protein
+  - protein | protein
+  - protein | protein | protein
+  - protein | protein | protein | protein
+  - protein | protein | protein | protein | protein
+
+# Test set configurations
+test_set:
+  - sars-cov-2 receptor binding domain
+  - hiv-1 envelope glycoprotein gp160
+  - mers s
+  - influenza a virus
+  - cd27 antigen
+
+# Sampling related options
+sampling:
+  mode: "design_cdrs"      # Sampling mode: design_cdrs, design_fv, optimize_ab
+  sample_structure: true   # Whether to sample structure
+  sample_sequence: true    # Whether to sample sequence
+  cdrs_to_mask: [3]        # CDRs to mask during sampling
+  num_samples: 100         # Number of samples to generate
+  optimize_steps:          # Steps for optimization (if optimize_ab is enabled)
+    - 100
+  batch_size: 20           # Batch size during sampling
+
+# Miscellaneous settings
+antibody_only: False       # If True, only the antibody will be considered
+input_error: True          # Adjust for input errors
+patch_size: 200            # Patch size for structure generation
+antigen_size: 200          # Size of antigen to consider
+
+# Dataset settings
+dataset_to_use: sabdab     # Dataset to use (e.g., sabdab)
+use_maxlength: False       # Whether to enforce a maximum sequence length
+max_length: 450            # Maximum sequence length allowed
+
+# Hardware and logging configurations
+num_gpus: 1                # Number of GPUs to use for training
+log_every_n_steps: 100     # Log training metrics every n steps
+val_check_interval: 0.1    # Interval (as a fraction of an epoch) to check validation
