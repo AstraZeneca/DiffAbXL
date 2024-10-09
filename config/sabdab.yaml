@@ -95,10 +95,8 @@ contact_distance: 6        # Maximum distance (in Å) for defining contacts betw
 # Fragment type IDs for different chains
 fragment_type:
   heavy: 1                 # ID for heavy chain
-  light_kappa: 2           # ID for light chain (kappa)
-  light_lambda: 3          # ID for light chain (lambda)
-  antigen: 4               # ID for antigen
-  unknown_light: 5         # ID for unknown light chains
+  light: 2                 # ID for light chain
+  antigen: 3               # ID for antigen
 
 # SabDab database filtering settings
 resolution_threshold: 4.0  # Maximum allowed resolution (in Å) for structures

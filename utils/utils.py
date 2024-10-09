@@ -87,23 +87,10 @@ def set_dirs(config):
         evaluation_dir_abag = make_dir(results_dir, f"{config['antigen']}_{config['antibody']}")
         lo_dir = make_dir(evaluation_dir_abag, "lead_optimization")
         denovo_dir = make_dir(evaluation_dir_abag, "denovo")
-        docking_dir = make_dir(evaluation_dir_abag, "docking")
-        fixbb_dir = make_dir(evaluation_dir_abag, "fixbb")
-        docking_dir = make_dir(docking_dir, config['antigen'])
-        docked_structures_dir = make_dir(docking_dir, "docked_structures")
-        scheme_dir = make_dir(docking_dir, config['scheme'])
-        scores_dir = make_dir(evaluation_dir_abag, "scores")
-        preds_dir = make_dir(evaluation_dir_abag, "predictions")
 
         config.update({
             "denovo_dir": denovo_dir,
             "lo_dir": lo_dir,
-            "docking_dir": docking_dir,
-            "scores_dir": scores_dir,
-            "preds_dir": preds_dir,
-            "scheme_dir": scheme_dir,
-            "docked_structures_dir": docked_structures_dir,
-            "fixbb_dir": fixbb_dir
         })
 
     print("Directories are set.")
