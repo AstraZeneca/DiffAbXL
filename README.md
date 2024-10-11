@@ -308,10 +308,10 @@ If you use DiffAbXL in your own studies, and work, please cite it by using the f
 
 ```
 @Misc{talip_ucar_2024_DiffAbXL,
-  author =   {Talip Ucar},
+	author =   {Talip Ucar},
 	title = {Benchmarking Generative Models for Antibody Design},
 	URL = {https://github.com/AstraZeneca/DiffAbXL},
-  month = October,
-  year = {since 2024}
+	month = {October},
+	year = {since 2024}
 }
 ```
