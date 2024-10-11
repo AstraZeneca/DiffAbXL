@@ -3,7 +3,7 @@
 # DiffAbXL: 
 ##### Author: Talip Ucar (ucabtuc@gmail.com)
 
-The implementation of DiffAbXL benchmarked in the paper: [Benchmarking Generative Models for Antibody Design](path to the url). 
+The implementation of DiffAbXL benchmarked in the paper: [Benchmarking Generative Models for Antibody Design](https://www.biorxiv.org/content/10.1101/2024.10.07.617023v1). 
 
 - This is a re-implementation of the original work, DiffAb: [[Paper](https://www.biorxiv.org/content/10.1101/2022.07.10.499510v5.abstract) and [Code](https://github.com/luost26/diffab/tree/main?tab=readme-ov-file)]
 
@@ -290,11 +290,16 @@ Weight & Biases can be used to track experiments. It is turned off by default, b
 ## Citing the paper
 
 ```
-@article{ucar2024bench,
-  title={Benchmarking Generative Models for Antibody Design},
-  author={Ucar, Talip and Malherbe, Cedric and Gonzalez, Ferran},
-  journal={arXiv preprint arXiv:2110.04361},
-  year={2024}
+@article {Ucar2024.10.07.617023,
+	author = {Ucar, Talip and Malherbe, Cedric and Gonzalez Hernandez, Ferran},
+	title = {Benchmarking Generative Models for Antibody Design},
+	elocation-id = {2024.10.07.617023},
+	year = {2024},
+	doi = {10.1101/2024.10.07.617023},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2024/10/11/2024.10.07.617023},
+	eprint = {https://www.biorxiv.org/content/early/2024/10/11/2024.10.07.617023.full.pdf},
+	journal = {bioRxiv}
 }
 ```
 
@@ -304,9 +309,9 @@ If you use DiffAbXL in your own studies, and work, please cite it by using the f
 ```
 @Misc{talip_ucar_2024_DiffAbXL,
   author =   {Talip Ucar},
-  title =    {{Benchmarking Generative Models for Antibody Design}},
-  howpublished = {\url{https://github.com/AstraZeneca/DiffAbXL}},
-  month        = October,
+	title = {Benchmarking Generative Models for Antibody Design},
+	URL = {https://github.com/AstraZeneca/DiffAbXL},
+  month = October,
   year = {since 2024}
 }
 ```
