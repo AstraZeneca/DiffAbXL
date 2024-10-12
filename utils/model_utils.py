@@ -79,8 +79,6 @@ class DiffAbXL(nn.Module):
 
         # Diffusion model and mask tokens
         self.diffusion = Diffusion(self.config)
-        self.mask_token = torch.tensor([20], dtype=torch.long, device=config["device"])
-        self.fragment_heavy = torch.tensor([1], dtype=torch.long, device=config["device"])
 
     def forward(self, batch):
         """
