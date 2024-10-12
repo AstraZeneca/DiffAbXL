@@ -54,10 +54,6 @@ class DiffAbXL(nn.Module):
         Embedding module for pairwise residue embeddings.
     diffusion : Diffusion
         Diffusion model for sequence and structure generation.
-    mask_token : torch.Tensor
-        Token used to mask amino acid sequences during training.
-    fragment_heavy : torch.Tensor
-        Token representing the heavy chain fragment.
     """
     def __init__(self, config):
         super().__init__()
