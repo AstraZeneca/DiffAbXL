@@ -73,7 +73,7 @@ class DiffAbXL(nn.Module):
         self.residue_emb = ResidueEmbedding(residue_dim, num_atoms, max_aa_types=config['max_aa_types'], max_chain_types=10)
         self.pair_emb = PairEmbedding(pair_dim, num_atoms, max_aa_types=config['max_aa_types'], max_relpos=32)
 
-        # Diffusion model and mask tokens
+        # Diffusion model
         self.diffusion = Diffusion(self.config)
 
     def forward(self, batch):
