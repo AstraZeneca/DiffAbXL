@@ -1,3 +1,10 @@
+"""
+Author: Talip Ucar
+email: ucabtuc@gmail.com
+
+Description: Training script.
+"""
+
 # Standard library imports
 import os
 import traceback

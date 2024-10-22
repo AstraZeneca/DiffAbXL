@@ -23,7 +23,7 @@ nvidia-nvtx-cu12==12.1.105
 opt-einsum==3.3.0
 pandas==2.2.1
 pickleshare==0.7.5
-pillow==9.6.0
+pillow==10.2.0
 progressbar2==4.4.2
 python-utils==3.8.2
 pytorch-lightning==1.8.6
