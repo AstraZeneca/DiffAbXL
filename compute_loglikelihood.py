@@ -2,7 +2,7 @@
 Author: Talip Ucar
 email: ucabtuc@gmail.com
 
-Description: Sample script to compute log-likehood.
+Description: Sample script to compute log-likelihood.
 """
 
 import torch
