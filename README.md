@@ -3,9 +3,9 @@
 # DiffAbXL: 
 ##### Author: Talip Ucar (ucabtuc@gmail.com)
 
-The implementation of DiffAbXL benchmarked in the paper: [Exploring Log-Likelihood Scores for Ranking Antibody Sequence Designs](https://www.biorxiv.org/content/10.1101/2024.10.07.617023v4.full.pdf). \
-Please note that the paper was originally titled "Benchmarking Generative Models for Antibody Design" but we decided to change it to better highlight its core contributions.
+The implementation of DiffAbXL benchmarked in the paper: [Exploring Log-Likelihood Scores for Ranking Antibody Sequence Designs](https://www.biorxiv.org/content/10.1101/2024.10.07.617023v4.full.pdf).
 
+- Please note that the paper was originally titled "Benchmarking Generative Models for Antibody Design" but we decided to change it to better highlight its core contributions.
 - This is a re-implementation of the original work, DiffAb: [[Paper](https://www.biorxiv.org/content/10.1101/2022.07.10.499510v5.abstract) and [Code](https://github.com/luost26/diffab/tree/main?tab=readme-ov-file)]
 
 
