@@ -17,8 +17,9 @@ The implementation of DiffAbXL benchmarked in the paper: [Exploring Log-Likeliho
 4. [Training](#training)
 5. [Structure of the repo](#structure-of-the-repo)
 6. [Experiment tracking](#experiment-tracking)
-7. [Citing the paper](#citing-the-paper)
-8. [Citing this repo](#citing-this-repo)
+7. [Bechmarking datasets and licenses](#bechmarking-datasets-and-licenses)
+8. [Citing the paper](#citing-the-paper)
+9. [Citing this repo](#citing-this-repo)
 
 
 ## Current Leaderboard
@@ -288,6 +289,9 @@ python train.py # For training.
 Weight & Biases can be used to track experiments. It is turned off by default, but can be turned on by changing option in the config file in ```./config/sabdab.yaml```
 
 
+## Bechmarking datasets and licenses
+Benchmarking datasets and their corresponding licenses can be found in ./benchmarking_datasets folder.
+
 ## Citing the paper
 
 ```
@@ -316,3 +320,4 @@ If you use DiffAbXL in your own studies, and work, please cite it by using the f
 	year = {since 2024}
 }
 ```
+
