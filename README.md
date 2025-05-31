@@ -290,7 +290,9 @@ Weight & Biases can be used to track experiments. It is turned off by default, b
 
 
 ## Bechmarking datasets and licenses
-Benchmarking datasets and their corresponding licenses can be found in ./benchmarking_datasets folder.
+Benchmarking datasets and their corresponding licenses can be found in ./benchmarking_datasets folder. The original Absci datasets can be found at:
+- Absci IgDesign Datasets: https://github.com/AbSciBio/igdesign/
+- Absic Her2 Datasets: https://github.com/AbSciBio/unlocking-de-novo-antibody-design
 
 ## Citing the paper
 
