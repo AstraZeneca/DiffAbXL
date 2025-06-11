@@ -11,7 +11,7 @@ __pycache__/
 *.so
 
 # Excel and CSV files
-*.csv
+#*.csv
 *.xlsx
 *.pdf
 *.deb
